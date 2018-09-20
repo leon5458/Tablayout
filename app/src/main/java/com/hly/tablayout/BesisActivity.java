@@ -6,6 +6,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +30,9 @@ public class BesisActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private List<Fragment> fragmentList = new ArrayList<>();
+
+    int imageViewRes[] = {R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,5 +62,46 @@ public class BesisActivity extends AppCompatActivity {
         tabLayout.getTabAt(2).setText("大海");
         tabLayout.getTabAt(3).setText("蒲公英");
 
+        /**
+         * 注释处修改tab以及获取tab的点击事件
+         */
+
+//        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+//            TabLayout.Tab tab=tabLayout.getTabAt(i);
+//            if (tab!=null){
+//                tab.setCustomView(getTabView(i)); //对应tab定制view
+//                if (tab.getCustomView()!=null){
+//                    View tabView=  (View)tab.getCustomView().getParent();//获得tab对应父item
+//                    tabView.setTag(i);
+//                    tabView.setOnClickListener(mTabOnClickListener);//设置点击事件
+//                }
+//            }
+//        }
+
     }
+
+//    public View getTabView(int position) {
+//        View v = LayoutInflater.from(BesisActivity.this).inflate(R.layout.go, null); //获得view
+//        ImageView img = v.findViewById(R.id.icon_item);
+//        img.setImageResource(imageViewRes[position]);
+//        return v;
+//    }
+
+//    private View.OnClickListener mTabOnClickListener = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            int position= (int) v.getTag();
+//            if (position==0 &&tabLayout.getTabAt(position).isSelected()==true){
+//                Toast.makeText(BesisActivity.this, "点击了第一个tab", Toast.LENGTH_SHORT).show();
+//            }else if (position==1 && tabLayout.getTabAt(position).isSelected()==true){
+//                Toast.makeText(BesisActivity.this, "点击了第二个tab", Toast.LENGTH_SHORT).show();
+//            }else {
+//                TabLayout.Tab tab = tabLayout.getTabAt(position);
+//                if (tab != null) {
+//                    tab.select();
+//                }
+//            }
+//        }
+//    };
+
 }

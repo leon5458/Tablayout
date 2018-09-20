@@ -46,6 +46,15 @@ public class ThiredActivity extends AppCompatActivity {
 
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), fragmentList));
 
+//        tabLayout.setupWithViewPager(viewPager);//关联viewpager
+//        List<String> titles = new ArrayList<>();
+//        titles.add("大海");
+//        titles.add("枫叶");
+//        titles.add("蒲公英");
+//        titles.add("吉他");
+//        for(int i=0;i<titles.size();i++){
+//            tabLayout.addTab(tabLayout.newTab().setText(titles.get(i)));
+//        }
 
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());
@@ -56,6 +65,24 @@ public class ThiredActivity extends AppCompatActivity {
         tabLayout.getTabAt(1).setText("枫叶");
         tabLayout.getTabAt(2).setText("蒲公英");
         tabLayout.getTabAt(3).setText("吉他");
+
+//        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+////                tab.getCustomView().findViewById(R.id.tab_text).setSelected(true);
+////                viewPager.setCurrentItem(tab.getPosition());
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
 
     }
 }
